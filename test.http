@@ -1,0 +1,60 @@
+
+GET https://b9193a7atrial.launchpad.cfapps.us10.hana.ondemand.com/odata/v4/bookshop/localhost:4004/odata/v4/bookshop/book
+
+###
+
+
+POST https://b9193a7atrial.launchpad.cfapps.us10.hana.ondemand.com/odata/v4/bookshop/order
+Content-Type: application/json;IEEE754Compatible=true
+
+{"ID":1001,"books_ID": 202, "count":5,"amount": 100}
+
+
+
+###
+
+POST https://b9193a7atrial.launchpad.cfapps.us10.hana.ondemand.com/d00bdf63-0e01-441f-ac82-632561df6d08.managedapprouter.comsapbkshapp/~140324164042+0000~/odata/v4/bookshop/order
+Content-Type: application/json;IEEE754Compatible=true
+
+{"ID":1001,"books_ID": 202, "count":5,"amount": 100}
+
+###
+#Get Books
+#
+GET http://localhost:4004/odata/v4/bookshop/book
+
+###
+#
+# Get Author wit ID 101
+#
+GET http://localhost:4004/odata/v4/bookshop/author(101)
+
+###
+#
+# Update Author with ID 101
+#
+POST http://localhost:4004/odata/v4/bookshop/author
+Content-Type: application/json
+
+{"ID": 101, "name": "Savarimuthu"}
+
+
+###
+#
+# Order a Book
+#
+POST http://localhost:4004/odata/v4/bookshop/order
+Content-Type: application/json;IEEE754Compatible=true
+
+{"ID":1001,"titl": 202, "count":5,"amount": 100}
+
+
+###
+#Get the order details
+#
+
+
+GET http://localhost:4004/odata/v4/bookshop/order
+
+
+

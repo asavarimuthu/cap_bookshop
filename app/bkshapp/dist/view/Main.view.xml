@@ -1,0 +1,195 @@
+<mvc:View controllerName="com.sap.bkshapp.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form" 
+    xmlns:core="sap.ui.core">
+     <Page id="page" title="{i18n>title}">
+        <content>
+ <!--    	<Table id="idBookAuthor"
+		inset="false"
+		items="{
+			path: 'BookModel>/author'
+		}">	
+		<columns>
+			<Column
+				width="12em">
+				<Text text="Author ID" />
+			</Column>
+			<Column
+				minScreenWidth="Tablet"
+				demandPopin="true">
+				<Text text="Name" />
+			</Column>
+<Column
+				minScreenWidth="Tablet"
+				demandPopin="true">
+				<Text text="Books" />
+			</Column>
+
+			
+		</columns>
+		<items>
+			<ColumnListItem vAlign="Middle" press="onRowPress" type="Navigation">
+				<cells>
+					<ObjectIdentifier
+						title="{BookModel>ID}"/>
+					<Text
+						text="{BookModel>name}" />
+<Text
+						text="{BookModel>books}" />
+
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table> -->
+
+
+          	<Table id="idBookTable"
+		inset="false"
+		items="{
+			path: 'BookModel>/book'
+		}">	
+		<columns>
+			<Column
+				width="12em">
+				<Text text="Book ID" />
+			</Column>
+			<Column
+				minScreenWidth="Tablet"
+				demandPopin="true">
+				<Text text="Book Name" />
+			</Column>
+<Column
+				minScreenWidth="Tablet"
+				demandPopin="true">
+				<Text text="Author ID" />
+			</Column>
+<Column
+				minScreenWidth="Tablet"
+				demandPopin="true">
+				<Text text="Stock" />
+			</Column>
+			
+		</columns>
+		<items>
+			<ColumnListItem vAlign="Middle" press="onRowPress" type="Navigation">
+				<cells>
+					<ObjectIdentifier
+						title="{BookModel>ID}"/>
+					<Text
+						text="{BookModel>title}" />
+<Text
+						text="{BookModel>author_ID}" />
+<Text
+						text="{BookModel>stock}" />
+		
+		 
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+
+		<f:Form id="OrderForm"
+			editable="true">
+			<f:title>
+				<core:Title text="Order Book" />
+			</f:title>
+			<f:layout>
+				<f:ResponsiveGridLayout
+					labelSpanXL="3"
+					labelSpanL="3"
+					labelSpanM="3"
+					labelSpanS="12"
+					adjustLabelSpan="false"
+					emptySpanXL="4"
+					emptySpanL="4"
+					emptySpanM="4"
+					emptySpanS="0"
+					columnsXL="1"
+					columnsL="1"
+					columnsM="1"
+					singleContainerFullSize="false" />
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer>
+					<f:formElements>
+						<f:FormElement label="Order Id">
+							<f:fields>
+								<Input value="{OrderModel>/OrderId}"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Book Id">
+							<f:fields>
+								<Input value="{OrderModel>/BookId}"/>	
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Count">
+							<f:fields>
+								<Input value="{OrderModel>/Count}"/>	
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Amount">
+							<f:fields>
+								<Input value="{OrderModel>/Amount}"/>	
+							</f:fields>
+						</f:FormElement>
+
+					</f:formElements>
+				</f:FormContainer>
+			</f:formContainers>
+		</f:Form>
+			<Button text="Submit Direct" type="Accept" press="onSubmitDirect" />
+				<Button text="Submit AJAX" type="Accept" press="onSubmitAjax" />
+
+				<Button text="Call Cloud Service" type="Accept" press="toCallCloud" />
+				<Button text="Call Ajax" type="Accept" press="ajaxcall" />
+
+
+			   	<Table id="idOrderTable"
+		inset="false"
+		items="{
+			path: 'BookModel>/order'
+		}">	
+		<columns>
+			<Column
+				width="12em">
+				<Text text="Order ID" />
+			</Column>
+			<Column
+				minScreenWidth="Tablet"
+				demandPopin="true">
+				<Text text="Book ID" />
+			</Column>
+<Column
+				minScreenWidth="Tablet"
+				demandPopin="true">
+				<Text text="Count" />
+			</Column>
+<Column
+				minScreenWidth="Tablet"
+				demandPopin="true">
+				<Text text="Amount" />
+			</Column>
+			
+		</columns>
+		<items>
+			<ColumnListItem vAlign="Middle" press="onRowPress" type="Navigation">
+				<cells>
+					<ObjectIdentifier
+						title="{BookModel>ID}"/>
+					<Text
+						text="{BookModel>books_ID}" />
+<Text
+						text="{BookModel>count}" />
+<Text
+						text="{BookModel>amount}" />
+		
+		 
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+
+        </content>
+    </Page>
+</mvc:View>
